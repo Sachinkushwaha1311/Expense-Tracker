@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>Expense Tracker</h1>
+        <div class="header-controls">
+            <div class="dropdown">
+                Daily <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="date-picker">
+                <i class="fa fa-calendar"></i>
+                <span id="currentDate"></span>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="dashboard-grid">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Monthly Income</h3>
+                    <button class="card-menu">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </button>
+                </div>
+                <div class="amount income-amount">$24,568</div>
+                <div class="change">
+                    <i class="fas fa-arrow-up"></i> 5.2% vs Last month
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Monthly Expenses</h3>
+                    <button class="card-menu">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </button>
+                </div>
+                <div class="amount expense-amount">$12,284</div>
+                <div class="change">
+                    <i class="fas fa-arrow-up"></i> 3.8% vs Last month
+                </div>
+            </div>
+
+            <div class="card my-card">
+                <div class="card-header">
+                    <h3 class="card-title">My Card</h3>
+                    <button class="card-menu" style="color: white;">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </button>
+                </div>
+                <div style="font-size: 0.75rem; opacity: 0.8; margin-bottom: 1rem;">Linked to your bank account</div>
+
+                <div class="card-chip"></div>
+                <div class="card-number">5789 4215 6321 8901</div>
+                <div class="card-holder">John Doe</div>
+
+                <div class="card-logo">
+                    <div class="card-logo-circle logo-red"></div>
+                    <div class="card-logo-circle logo-orange"></div>
+                </div>
+
+                <div class="spending-section">
+                    <div style="margin-bottom: 0.5rem; font-size: 0.875rem; opacity: 0.9;">Spending Limit</div>
+                    <div class="spending-limit">$6,875.00</div>
+                    <div class="spending-used">used from $12,700.00</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-section">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Overview</h3>
+                    <div style="display: flex; gap: 1rem;">
+                        <div class="dropdown">Yearly <i class="fas fa-chevron-down"></i></div>
+                        <button class="filter-btn">
+                            <i class="fas fa-filter"></i>
+                            Filter
+                        </button>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+
+                    <!-- January -->
+                    <div class="chart-group" data-month="January" data-income="18000" data-expense="9500">
+                        <div class="chart-bar">
+                            <div class="chart-bar-income" style="height: 90px;"></div>
+                            <div class="chart-bar-expense" style="height: 55px;"></div>
+                        </div>
+                        <span class="chart-month">Jan</span>
+                    </div>
+
+                    <!-- February -->
+                    <div class="chart-group" data-month="February" data-income="21000" data-expense="11000">
+                        <div class="chart-bar">
+                            <div class="chart-bar-income" style="height: 110px;"></div>
+                            <div class="chart-bar-expense" style="height: 70px;"></div>
+                        </div>
+                        <span class="chart-month">Feb</span>
+                    </div>
+
+                    <!-- March -->
+                    <div class="chart-group" data-month="March" data-income="24000" data-expense="12500">
+                        <div class="chart-bar">
+                            <div class="chart-bar-income" style="height: 130px;"></div>
+                            <div class="chart-bar-expense" style="height: 80px;"></div>
+                        </div>
+                        <span class="chart-month">Mar</span>
+                    </div>
+
+                    <!-- April -->
+                    <div class="chart-group" data-month="April" data-income="19000" data-expense="10500">
+                        <div class="chart-bar">
+                            <div class="chart-bar-income" style="height: 100px;"></div>
+                            <div class="chart-bar-expense" style="height: 65px;"></div>
+                        </div>
+                        <span class="chart-month">Apr</span>
+                    </div>
+
+                    <!-- May -->
+                    <div class="chart-group" data-month="May" data-income="27000" data-expense="14000">
+                        <div class="chart-bar">
+                            <div class="chart-bar-income" style="height: 150px;"></div>
+                            <div class="chart-bar-expense" style="height: 90px;"></div>
+                        </div>
+                        <span class="chart-month">May</span>
+                    </div>
+
+                    <!-- June -->
+                    <div class="chart-group" data-month="June" data-income="22000" data-expense="11800">
+                        <div class="chart-bar">
+                            <div class="chart-bar-income" style="height: 120px;"></div>
+                            <div class="chart-bar-expense" style="height: 75px;"></div>
+                        </div>
+                        <span class="chart-month">Jun</span>
+                    </div>
+
+                    <!-- July -->
+                    <div class="chart-group" data-month="July" data-income="25000" data-expense="13200">
+                        <div class="chart-bar">
+                            <div class="chart-bar-income" style="height: 140px;"></div>
+                            <div class="chart-bar-expense" style="height: 85px;"></div>
+                        </div>
+                        <span class="chart-month">Jul</span>
+                    </div>
+
+                    <!-- August -->
+                    <div class="chart-group active" data-month="August" data-income="24568" data-expense="12284">
+                        <div class="chart-bar">
+                            <div class="chart-bar-income" style="height: 180px;"></div>
+                            <div class="chart-bar-expense" style="height: 120px;"></div>
+                        </div>
+
+                        <span class="chart-month">Aug</span>
+                    </div>
+
+                    <!-- September -->
+                    <div class="chart-group" data-month="September" data-income="23000" data-expense="12000">
+                        <div class="chart-bar">
+                            <div class="chart-bar-income" style="height: 125px;"></div>
+                            <div class="chart-bar-expense" style="height: 80px;"></div>
+                        </div>
+                        <span class="chart-month">Sep</span>
+                    </div>
+
+                    <!-- October -->
+                    <div class="chart-group" data-month="October" data-income="26000" data-expense="13500">
+                        <div class="chart-bar">
+                            <div class="chart-bar-income" style="height: 155px;"></div>
+                            <div class="chart-bar-expense" style="height: 95px;"></div>
+                        </div>
+                        <span class="chart-month">Oct</span>
+                    </div>
+
+                    <!-- November -->
+                    <div class="chart-group" data-month="November" data-income="21500" data-expense="11500">
+                        <div class="chart-bar">
+                            <div class="chart-bar-income" style="height: 115px;"></div>
+                            <div class="chart-bar-expense" style="height: 70px;"></div>
+                        </div>
+                        <span class="chart-month">Nov</span>
+                    </div>
+
+                    <!-- December -->
+                    <div class="chart-group" data-month="December" data-income="28000" data-expense="15000">
+                        <div class="chart-bar">
+                            <div class="chart-bar-income" style="height: 165px;"></div>
+                            <div class="chart-bar-expense" style="height: 100px;"></div>
+                        </div>
+                        <span class="chart-month">Dec</span>
+                    </div>
+
+                </div>
+
+                <div class="month-details">
+                    <div class="month-card income-month-card">
+                        <span>Income</span>
+                        <strong id="selectedIncome">$24,568.00</strong>
+                        <small id="selectedIncomeMonth">August 2026</small>
+                    </div>
+                    <div class="month-card expense-month-card">
+                        <span>Expenses</span>
+                        <strong id="selectedExpense">$12,284.00</strong>
+                        <small id="selectedExpenseMonth">August 2026</small>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">All Expenses</h3>
+                    <button class="card-menu"><i class="fas fa-ellipsis-h"></i>
+                    </button>
+                </div>
+
+                <div style="font-size: 0.75rem; color: #6b7280; margin-bottom: 1rem;">Spending Breakdown by Category
+                </div>
+
+                <div class="expense-breakdown">
+                    <div class="total-expense">$12,284.00</div>
+
+                    <div class="period-tabs">
+                        <span class="period-tab">Daily</span>
+                        <span class="period-tab">Weekly</span>
+                        <span class="period-tab active">Monthly</span>
+                    </div>
+
+                    <div class="period-amounts">
+                        <span>Daily</span>
+                        <span>Weekly</span>
+                        <span>Monthly</span>
+                    </div>
+
+                    <div class="period-values">
+                        <span>$409.47</span>
+                        <span>$2,834.77</span>
+                        <span>$9,039.76</span>
+                    </div>
+
+                    <div class="color-bar"></div>
+
+                    <div class="expense-categories">
+                        <ul class="expense-categories">
+                            <li class="expense-category">
+                                <div class="category-info">
+                                    <div class="category-dot dot-food"></div>
+                                    <span>Food & Health</span>
+                                </div>
+                                <span>$6,142</span>
+                            </li>
+
+                            <li class="expense-category">
+                                <div class="category-info">
+                                    <div class="category-dot dot-entertainment"></div>
+                                    <span>Entertainments</span>
+                                </div>
+                                <span>$1,228</span>
+                            </li>
+
+                            <li class="expense-category">
+                                <div class="category-info">
+                                    <div class="category-dot dot-shopping"></div>
+                                    <span>Shopping</span>
+                                </div>
+                                <span>$1,228</span>
+                            </li>
+
+                            <li class="expense-category">
+                                <div class="category-info">
+                                    <div class="category-dot dot-investment"></div>
+                                    <span>Investment</span>
+                                </div>
+                                <span>$3,686</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card transaction-section">
+            <div class="card-header">
+                <h3 class="card-title">Recent Transactions</h3>
+                <div class="filters">
+                    <button class="filter-btn">
+                        <i class="fas fa-sort"></i>
+                        Short
+                    </button>
+                    <button class="filter-btn">
+                        <i class="fas fa-filter"></i>
+                        Filter
+                    </button>
+                </div>
+            </div>
+
+            <table class="transaction-table">
+                <thead>
+                    <tr>
+                        <th>Date<i class="fas fa-sort"></i></th>
+                        <th>Category<i class="fas fa-sort"></i></th>
+                        <th>Amount<i class="fas fa-sort"></i></th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Aug 02, 2026</td>
+                        <td>Subscription</td>
+                        <td>$500.00</td>
+                        <td><span class="status-success">Success</span></td>
+                        <td><button class="action-btn"><i class="fas fa-ellipsis-h"></i></button></td>
+                    </tr>
+
+                    <tr>
+                        <td>Aug 01, 2026</td>
+                        <td>Subscription</td>
+                        <td>$346.00</td>
+                        <td><span class="status-success">Success</span></td>
+                        <td><button class="action-btn"><i class="fas fa-ellipsis-h"></i></button></td>
+                    </tr>
+
+                    <tr>
+                        <td>July 31, 2026</td>
+                        <td>Subscription</td>
+                        <td>$270.00</td>
+                        <td><span class="status-success">Success</span></td>
+                        <td><button class="action-btn"><i class="fas fa-ellipsis-h"></i></button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+    <!-- Income and Expense button -->
+    <div class="add-buttons">
+        <button class="fab fab-income" onclick="openIncomeModal()" title="Add Income">
+            <i class="fas fa-plus"></i>
+        </button>
+
+        <button class="fab fab-expense" onclick="openExpenseModal()" title="Add Expense">
+            <i class="fas fa-minus"></i>
+        </button>
+    </div>
+
+    <!-- Income Model -->
+    <div id="incomeModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Add Income</h2>
+                <button class="close-btn" onclick="closeModal('incomeModal')">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <form action="" id="incomeForm" autocomplete="off">
+                    <div class="form-group">
+                        <label class="form-label">Amount</label>
+                        <input type="number" class="form-input" id="incomeAmount" placeholder="Enter Amount" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Category</label>
+                        <select class="form-select" id="incomeCategory" required>
+                            <option value="">Select Category</option>
+                            <option value="salary">Salary</option>
+                            <option value="freelance">Freelance</option>
+                            <option value="business">Business</option>
+                            <option value="investment">Investment</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Description</label>
+                        <input type="text" class="form-input" id="incomeDescription" placeholder="Enter Description"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Date</label>
+                        <input type="date" class="form-input" id="incomeDate" placeholder="Enter Date" required>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('incomeModal')">Cancel</button>
+                <button class="btn btn-primary" onclick="addIncome()">Add Income</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="expenseModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Add Expense</h2>
+                <button class="close-btn" onclick="closeModal('expenseModal')">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <form id="expenseForm" autocomplete="off">
+                    <div class="form-group">
+                        <label class="form-label">Amount</label>
+                        <input type="number" class="form-input" id="expenseAmount" placeholder="Enter Amount" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Category</label>
+                        <select class="form-select" id="expenseCategory" required>
+                            <option value="">Select Category</option>
+                            <option value="food">Food</option>
+                            <option value="entertainment">Entertainment</option>
+                            <option value="shopping">Shopping</option>
+                            <option value="transport">Transport</option>
+                            <option value="utilities">Utilities</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Description</label>
+                        <input type="text" class="form-input" id="expenseDescription" placeholder="Enter Description"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Date</label>
+                        <input type="date" class="form-input" id="expenseDate" placeholder="Enter Date" required>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('expenseModal')">Cancel</button>
+                <button class="btn btn-primary" onclick="addExpense()">Add Expense</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+
+</html>

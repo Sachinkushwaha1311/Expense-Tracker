@@ -1,18 +1,17 @@
-# Expense Tracker
+# Money Tracker
 
-A simple browser-based expense tracker built with HTML, CSS, and JavaScript.
+A beginner-friendly personal finance tracker built with HTML, CSS, and JavaScript.
 
 ## Features
-- Add income and expense entries
-- Track total balance
-- View a list of transactions
-- Remove transactions from the list
-- Simple and lightweight front-end app
 
-## Files
-- `index.html` - app structure
-- `style.css` - styling
-- `script.js` - logic for tracking expenses
+- Add, edit, and delete income and expense transactions
+- Automatically calculate total income, total expenses, and current balance
+- Filter transactions by expense category
+- Save transactions in the browser with local storage
+- Responsive layout for desktop and mobile
 
-## Notes
-This project is a front-end-only app and stores data in the browser session while the page is open.
+## Run it
+
+Open `index.html` in a browser. No installation or server is required.
+
+Transactions are stored in the browser on the current device. Clearing browser data will remove saved transactions.
